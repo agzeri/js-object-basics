@@ -40,13 +40,13 @@ const heading2 = {
 
 #### 4. Inside `createHtmlElement` function, we’ll need to code our answer. But first, I’m going to create a variable to save my generated content.
 
-```diff
+```js
 function createHtmlElement(obj) {
   let tag = ''
 }
 ```
 
-#### 5. I need to know what HTML element I need to generate, that elementy type comes with the property name `element` from the object that user send us.
+#### 5. I need to know what HTML element I need to generate, that element type comes with the property name `element` from the object that user sent us.
 
 ```js
 const paragraph = {
@@ -99,5 +99,13 @@ function createHtmlElement(obj) {
 }
 ```
 
-#### 9. That’s all. Our tests should be passing with no errors.
+#### 9. That’s all. Don’t forget to return our variable created (`tag`).
+```diff
+function createHtmlElement(obj) {
+  let tag = `<${obj.element} class='${obj.classNames}'>${obj.textContent}</${obj.element}>`
+  
++ return tag
+}
+```
+Our tests should be passing with no errors.
 
